@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: toolflow-pdf-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /
+    autoDeploy: false
